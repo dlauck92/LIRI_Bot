@@ -1,13 +1,12 @@
 {
-  "name": "package.json",
+  "name": "drew-lauck",
   "version": "1.0.0",
-  "description": "packages for bot app",
+  "description": "",
   "main": "liri.js",
   "dependencies": {
     "axios": "^0.18.0",
     "dotenv": "^6.2.0",
     "moment": "^2.23.0",
-    "node-geocoder": "^3.22.0",
     "node-spotify-api": "^1.0.7"
   },
   "devDependencies": {},
@@ -16,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dlauck92/LIRI_Bot.git"
+    "url": "git+https://github.com/dlauck92/day2.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dlauck92/LIRI_Bot/issues"
+    "url": "https://github.com/dlauck92/day2/issues"
   },
-  "homepage": "https://github.com/dlauck92/LIRI_Bot#readme"
+  "homepage": "https://github.com/dlauck92/day2#readme"
 }
