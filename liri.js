@@ -83,14 +83,14 @@ function song(){
     }
   }
 
-  spotify.search({ type: 'track', query: songName }, function(err, data) {
+  spotify.search({ type: 'track', query: search, limit: 1}).then(function(err, data) {
     if (err) {
       return console.log('Error occurred: ' + err);
     }
 
     var artistName = data.tracks.items[0].artists[0].name;
 
-    for (i=1; i < data.tracks.items[0].artists.length; i++) {
+    for (i = 1; i < data.tracks.items[0].artists.length; i++) {
       if (data.tracks.items[0].artists.length > 1) {
         artistName = artistName + ", " + data.tracks.items[0].artists[i].name;
       }
