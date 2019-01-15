@@ -1,8 +1,9 @@
-require('dotenv').config();
+require("dotenv").config();
 
 var fs = require("fs");
 var keys = require('./keys.js');
 var Spotify = require('node-spotify-api');
+var spotify = new Spotify(keys.spotify);
 var moment = require('moment');
 let axios = require('axios');
 
@@ -47,7 +48,7 @@ function concerts() {
   }
   axios.get("https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp").then(
     function(response) {
-      for (i=0; i < response.data.length; i++) {
+      for (i = 0; i < response.data.length; i++) {
         console.log("Venue: " + response.data[i].venue.name);
         if (response.data[i].venue.region === "") {
           console.log("Location: " + response.data[i].venue.city + ", " + response.data[i].venue.country);
@@ -63,7 +64,7 @@ function concerts() {
 
 // Spotify function()
 function song(){
-  var spotify = new Spotify(keys.spotify);
+
   var nodeArgs = process.argv;
   var songName = "";
 
