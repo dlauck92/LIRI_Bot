@@ -83,18 +83,20 @@ function song(){
     }
   }
 
-  spotify.search({ type: 'track', query: search, limit: 1}).then(function(err, data) {
+  spotify.search({ type: 'track', query: songName}).then(function(err, data) {
     if (err) {
       return console.log('Error occurred: ' + err);
     }
 
     var artistName = data.tracks.items[0].artists[0].name;
 
+// multiple artists on one song
     for (i = 1; i < data.tracks.items[0].artists.length; i++) {
       if (data.tracks.items[0].artists.length > 1) {
         artistName = artistName + ", " + data.tracks.items[0].artists[i].name;
       }
     }
+    
     console.log("Artist(s): " + artistName);
     console.log("Song Name: " + data.tracks.items[0].name);
     console.log("Preview: " + data.tracks.items[0].preview_url);
